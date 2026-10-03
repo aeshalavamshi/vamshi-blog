@@ -1,5 +1,5 @@
-# vamshi-blog
+# Circles & Lines
 
-Jekyll blog hosted on GitHub Pages at https://vamshi.actualyz.com
+Vamshi's blog on Madhyastha Darshan and everyday life — https://vamshi.actualyz.com
 
-Add posts as `_posts/YYYY-MM-DD-title.md`.
+Built with Jekyll and GitHub Pages. See **WRITING-GUIDE.md** for how to add posts.

@@ -1,0 +1,15 @@
+---
+layout: default
+title: Writing
+permalink: /writing/
+---
+<main class="wrap narrow">
+  <header class="post-head"><h1>Writing</h1><p class="lede">Every essay, newest first.</p></header>
+  {% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {% for y in by_year %}
+  <h2 class="year">{{ y.name }}</h2>
+  <div class="list">
+    {% for post in y.items %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+  {% endfor %}
+</main>

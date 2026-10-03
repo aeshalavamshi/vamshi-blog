@@ -1,9 +1,22 @@
-title: Madhyastha Darshan Today
-description: Notes on Madhyastha Darshan and its application in modern life
+# ---- Site settings: edit these freely ----
+title: Circles & Lines
+tagline: Madhyastha Darshan and everyday life
+description: Essays on Madhyastha Darshan (Coexistential Philosophy) and how to live with it today, by Vamshi.
 url: https://vamshi.actualyz.com
 author: Vamshi
+github_username: aeshalavamshi
+
+# ---- Build settings: leave these alone ----
 permalink: /:year/:month/:slug/
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+exclude:
+  - README.md
+  - WRITING-GUIDE.md
+  - CNAME
+  - Gemfile
+defaults:
+  - scope: {path: ""}
+    values: {image: /assets/img/madhyasth/cosmos-mind.webp}

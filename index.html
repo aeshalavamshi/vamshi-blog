@@ -1,9 +1,28 @@
 ---
 layout: default
 ---
-<ul class="post-list">
-{% for post in site.posts %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-  <p class="meta">{{ post.date | date: "%-d %B %Y" }}</p></li>
-{% endfor %}
-</ul>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Notes by Vamshi</p>
+    <h1>Living in lines, not circles.</h1>
+    <p class="lede">Essays on Madhyastha Darshan, and on the everyday questions of energy, discipline, attention and a meaningful life.</p>
+    <p class="cta"><a class="btn primary" href="{{ '/writing/' | relative_url }}">Read the essays</a><a class="btn" href="{{ '/madhyastha-darshan/' | relative_url }}">What is Madhyastha Darshan?</a></p>
+  </div>
+</section>
+<section class="wrap block">
+  <div class="section-head"><h2>Latest writing</h2><a href="{{ '/writing/' | relative_url }}">All essays →</a></div>
+  <div class="grid">
+    {% for post in site.posts limit: 6 %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+</section>
+<section class="wrap block">
+  <a class="feature" href="{{ '/madhyastha-darshan/' | relative_url }}">
+    <img src="{{ '/assets/img/madhyasth/cosmos-mind.webp' | relative_url }}" alt="Silhouette of a human head filled with a spiral galaxy" loading="lazy">
+    <div>
+      <p class="eyebrow">Start here</p>
+      <h2>New to Madhyastha Darshan?</h2>
+      <p>A short, plain-language introduction, key diagrams, and the best places to read the original books and watch A. Nagraj's talks.</p>
+      <span class="btn primary">Explore the philosophy →</span>
+    </div>
+  </a>
+</section>

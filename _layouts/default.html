@@ -3,16 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
   {% seo %}
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23a4552b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23fbf7f0' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
   {% feed_meta %}
 </head>
 <body>
   <header class="site-header">
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    <nav><a href="{{ '/' | relative_url }}">Posts</a><a href="{{ '/about/' | relative_url }}">About</a></nav>
+    <div class="wrap bar">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="mark" aria-hidden="true"></span>{{ site.title }}</a>
+      <nav aria-label="Main">
+        {% assign path = page.url %}
+        <a href="{{ '/' | relative_url }}" {% if path == '/' %}aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/writing/' | relative_url }}" {% if path contains '/writing' or page.layout == 'post' %}aria-current="page"{% endif %}>Writing</a>
+        <a href="{{ '/madhyastha-darshan/' | relative_url }}" {% if path contains '/madhyastha' %}aria-current="page"{% endif %}>Madhyastha Darshan</a>
+        <a href="{{ '/about/' | relative_url }}" {% if path contains '/about' %}aria-current="page"{% endif %}>About</a>
+        <button class="theme" id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+      </nav>
+    </div>
   </header>
-  <main>{{ content }}</main>
-  <footer class="site-footer">© {{ 'now' | date: '%Y' }} {{ site.author }}</footer>
+  {{ content }}
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>{{ site.title }}</strong> — {{ site.tagline }}.</p>
+      <p class="small">© {{ 'now' | date: '%Y' }} {{ site.author }} · <a href="{{ '/feed.xml' | relative_url }}">RSS</a> · <a href="https://github.com/{{ site.github_username }}">GitHub</a> · Personal views, written in a private capacity.</p>
+    </div>
+  </footer>
+  <script>
+  (function(){var b=document.getElementById('theme');if(!b)return;
+  b.addEventListener('click',function(){var r=document.documentElement,c=r.getAttribute('data-theme');
+  if(!c)c=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  var n=c==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}});})();
+  </script>
 </body>
 </html>
