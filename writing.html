@@ -2,14 +2,34 @@
 layout: default
 title: Writing
 permalink: /writing/
+description: All essays, organised by topic and tag, with search.
 ---
-<main class="wrap narrow">
-  <header class="post-head"><h1>Writing</h1><p class="lede">Every essay, newest first.</p></header>
-  {% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
-  {% for y in by_year %}
-  <h2 class="year">{{ y.name }}</h2>
-  <div class="list">
-    {% for post in y.items %}{% include post-card.html post=post %}{% endfor %}
+<div class="wrap">
+  <header class="page-head">
+    <h1>Writing</h1>
+    <p class="lede">Every essay in one place. Filter by topic or tag, or search.</p>
+  </header>
+  <div class="tools">
+    <div class="search">{% include icon.html n='search' %}<label class="sr" for="q">Search essays</label><input id="q" type="search" placeholder="Search essays…" autocomplete="off"></div>
+    <div>
+      <p class="row-label">Topics</p>
+      <div class="chips">
+        <button class="chip" data-topic="all" aria-pressed="true">All <small>{{ site.posts.size }}</small></button>
+        {% assign cats = site.categories | sort %}
+        {% for c in cats %}<button class="chip" data-topic="{{ c[0] | slugify }}" aria-pressed="false">{{ c[0] }} <small>{{ c[1].size }}</small></button>{% endfor %}
+      </div>
+    </div>
+    <details class="more">
+      <summary>Filter by tag ▾</summary>
+      <div class="chips">
+        {% assign tags = site.tags | sort %}
+        {% for t in tags %}<button class="chip" data-tag="{{ t[0] | downcase }}" aria-pressed="false">{{ t[0] }} <small>{{ t[1].size }}</small></button>{% endfor %}
+      </div>
+    </details>
   </div>
-  {% endfor %}
-</main>
+  <p id="count" aria-live="polite"></p>
+  <div class="grid" id="posts">
+    {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+  <p class="empty" id="empty" hidden>No essays match. Try clearing the search or choosing "All".</p>
+</div>

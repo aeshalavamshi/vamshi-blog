@@ -2,7 +2,8 @@
 layout: post
 title: "Vipassana"
 date: 2019-01-09
-categories: [Spirituality]
+categories: ["Spirituality"]
+cover: /assets/img/old-blog/2019-01/dsc0136_orig-1.jpg
 tags: [4 noble truths, Buddhism, emotional intelligence, happiness, health and wellbeing, Indian meditation technique, love and kindness, Pain, Vipassana, wisdom]
 original_url: https://circlesnlines.wordpress.com/2019/01/09/vipassana/
 source: circlesnlines.wordpress.com

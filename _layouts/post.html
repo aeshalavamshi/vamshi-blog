@@ -1,16 +1,45 @@
 ---
 layout: default
 ---
-<main class="wrap narrow post">
-  <header class="post-head">
-    <p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time> · {{ content | number_of_words | divided_by: 220 | plus: 1 }} min read</p>
+{% assign abs = page.url | absolute_url %}
+{% assign enc_url = abs | url_encode %}
+{% assign enc_title = page.title | url_encode %}
+<div class="wrap">
+  <header class="post-hero">
+    {% if page.categories.first %}<a class="label" href="{{ '/writing/' | relative_url }}#{{ page.categories.first | slugify }}">{{ page.categories.first }}</a>{% endif %}
     <h1>{{ page.title }}</h1>
-    {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<span>{{ t }}</span>{% endfor %}</p>{% endif %}
+    <p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time> · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read · by {{ site.author }}</p>
   </header>
-  <div class="prose">{{ content }}</div>
-  {% if page.source %}<p class="note">First published on <a href="{{ page.original_url }}">{{ page.source }}</a>, preserved here.</p>{% endif %}
-  <nav class="pager">
-    {% if page.previous.url %}<a class="prev" href="{{ page.previous.url | relative_url }}"><small>Older</small>{{ page.previous.title }}</a>{% endif %}
-    {% if page.next.url %}<a class="next" href="{{ page.next.url | relative_url }}"><small>Newer</small>{{ page.next.title }}</a>{% endif %}
-  </nav>
-</main>
+  {% if page.cover %}<div class="post-cover"><div class="cover{% if page.cover_fit == 'contain' %} contain{% endif %}"><img src="{{ page.cover | relative_url }}" alt=""></div></div>{% endif %}
+
+  <div class="article-grid">
+    <article>
+      <div class="prose">{{ content }}</div>
+      {% if page.source %}<p class="note">First published on <a href="{{ page.original_url }}">{{ page.source }}</a>, preserved here.</p>{% endif %}
+      <nav class="pager" aria-label="More essays">
+        {% if page.previous.url %}<a class="prev" href="{{ page.previous.url | relative_url }}"><small>Older</small>{{ page.previous.title }}</a>{% endif %}
+        {% if page.next.url %}<a class="next" href="{{ page.next.url | relative_url }}"><small>Newer</small>{{ page.next.title }}</a>{% endif %}
+      </nav>
+    </article>
+    <aside class="side" aria-label="Article tools">
+      <div id="toc" hidden><h4>In this essay</h4></div>
+      <div>
+        <h4>Share</h4>
+        <div class="share">
+          <a class="btn sm" href="https://wa.me/?text={{ enc_title }}%20{{ enc_url }}" target="_blank" rel="noopener">{% include icon.html n='whatsapp' %} WhatsApp</a>
+          <a class="btn sm" href="https://twitter.com/intent/tweet?text={{ enc_title }}&url={{ enc_url }}" target="_blank" rel="noopener">{% include icon.html n='x' %} Post</a>
+          <a class="btn sm" href="https://www.linkedin.com/sharing/share-offsite/?url={{ enc_url }}" target="_blank" rel="noopener">{% include icon.html n='linkedin' %} LinkedIn</a>
+          <a class="btn sm" href="mailto:?subject={{ enc_title }}&body={{ enc_url }}">{% include icon.html n='mail' %} Email</a>
+          <button class="btn sm" data-copy="{{ abs }}">{% include icon.html n='link' %} Copy link</button>
+          <button class="btn sm" data-share hidden>{% include icon.html n='share' %} Share…</button>
+        </div>
+      </div>
+      {% if page.tags.size > 0 %}<div><h4>Tags</h4><div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div></div>{% endif %}
+      <div class="author">
+        <b>{{ site.author }}</b>
+        <p>Writing on Madhyastha Darshan and living well. Questions or thoughts on this essay?</p>
+        {% if site.email %}<a class="btn primary sm" href="mailto:{{ site.email }}?subject=Re: {{ page.title | url_encode }}">{% include icon.html n='mail' %} Write to me</a>{% endif %}
+      </div>
+    </aside>
+  </div>
+</div>

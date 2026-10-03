@@ -5,6 +5,7 @@ description: Essays on Madhyastha Darshan (Coexistential Philosophy) and how to 
 url: https://vamshi.actualyz.com
 author: Vamshi
 github_username: aeshalavamshi
+email: aeshala.vamshi@gmail.com   # shown on the Contact buttons; change or delete if you prefer
 
 # ---- Build settings: leave these alone ----
 permalink: /:year/:month/:slug/

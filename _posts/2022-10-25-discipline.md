@@ -2,7 +2,9 @@
 layout: post
 title: "Discipline"
 date: 2022-10-25
-categories: []
+categories: ["Discipline & Habits"]
+cover: /assets/img/old-blog/2022-10/2019_04_04failure-frustrationcycle.png
+cover_fit: contain
 tags: [anicca, Buddhism, Discipline, habits, health and wellbeing, Indian meditation technique, knowledge, rituals, self discipline, wisdom]
 original_url: https://circlesnlines.wordpress.com/2022/10/25/discipline/
 source: circlesnlines.wordpress.com

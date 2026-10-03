@@ -2,7 +2,9 @@
 layout: post
 title: "Energy – Part 1 – What you eat decides your energy level"
 date: 2022-10-27
-categories: []
+categories: ["Health & Energy"]
+cover: /assets/img/old-blog/2022-10/image-3.png
+cover_fit: contain
 tags: []
 original_url: https://circlesnlines.wordpress.com/2022/10/27/energy-part-1-what-you-eat-decides-your-energy-level/
 source: circlesnlines.wordpress.com
