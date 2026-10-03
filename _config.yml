@@ -1,0 +1,9 @@
+title: Madhyastha Darshan Today
+description: Notes on Madhyastha Darshan and its application in modern life
+url: https://vamshi.actualyz.com
+author: Vamshi
+permalink: /:year/:month/:slug/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
