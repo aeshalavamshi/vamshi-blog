@@ -23,11 +23,10 @@
   });
 
   /* ---- Theme ---- */
-  var tb=$('#theme');
-  if(tb)tb.addEventListener('click',function(){
+  $$('[data-theme-toggle]').forEach(function(tb){tb.addEventListener('click',function(){
     var c=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
     var n=c==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}
-  });
+  })});
 
   /* ---- Toast, copy, share ---- */
   var toast=$('#toast');
