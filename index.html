@@ -2,57 +2,53 @@
 layout: default
 ---
 {% assign posts = site.posts %}
-{% assign lead = posts.first %}
-<div class="wrap">
-  <section class="intro">
-    <p class="eyebrow">{{ site.author }} · Essays</p>
-    <h1>Clear thinking for a calmer life.</h1>
-    <p class="lede">Essays on Madhyastha Darshan and on the everyday questions of energy, discipline, attention and a meaningful life.</p>
+<section class="wrap lead">
+  {% include post-card.html post=posts.first variant="big" %}
+  <div class="lead-side">
+    {% for post in posts offset: 1 limit: 3 %}{% include post-card.html post=post variant="stack" %}{% endfor %}
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#fff;opacity:.85">{{ site.author }} · Essays</p>
+    <h2>Clear thinking for a calmer life.</h2>
+    <p>Essays on Madhyastha Darshan and on the everyday questions of energy, discipline, attention and a meaningful life.</p>
     <div class="btns">
-      <a class="btn primary" href="{{ '/writing/' | relative_url }}">Read the essays</a>
-      <a class="btn" href="{{ '/madhyastha-darshan/' | relative_url }}">Explore Madhyastha Darshan</a>
+      <a class="btn light" href="{{ '/writing/' | relative_url }}">Read the essays {% include icon.html n='arrow' %}</a>
+      <a class="btn light" href="{{ '/madhyastha-darshan/' | relative_url }}">Madhyastha Darshan {% include icon.html n='arrow' %}</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sec" style="padding-top:12px">
-    <div class="sec-head"><h2>Latest</h2><a href="{{ '/writing/' | relative_url }}">All writing →</a></div>
-    <div class="featured">
-      {% include post-card.html post=lead variant="big" %}
-      <div class="stack">
-        {% for post in posts offset: 1 limit: 4 %}{% include post-card.html post=post variant="row" %}{% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" style="padding-top:12px">
-    <div class="sec-head"><h2>Browse by topic</h2></div>
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Browse by topic</h2><a href="{{ '/writing/' | relative_url }}">All writing →</a></div>
     <div class="chips">
       {% assign cats = site.categories | sort %}
       {% for c in cats %}<a class="chip" href="{{ '/writing/' | relative_url }}#{{ c[0] | slugify }}">{{ c[0] }} <small>{{ c[1].size }}</small></a>{% endfor %}
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sec" style="padding-top:12px">
-    <div class="band">
-      <img src="{{ '/assets/img/madhyasth/cosmos-mind.webp' | relative_url }}" alt="Silhouette of a human head filled with a spiral galaxy" loading="lazy">
-      <div>
-        <p class="eyebrow">Start here</p>
-        <h2>New to Madhyastha Darshan?</h2>
-        <p>A short, plain-language introduction, a few key diagrams, and the best places to read the original books and watch A. Nagraj's talks.</p>
-        <a class="btn primary" href="{{ '/madhyastha-darshan/' | relative_url }}">Explore the philosophy {% include icon.html n='arrow' %}</a>
-      </div>
-    </div>
-  </section>
+<section class="mdband">
+  <div class="txt">
+    <p class="eyebrow" style="color:#fff;opacity:.8">Start here</p>
+    <h2>New to Madhyastha Darshan?</h2>
+    <p>A short, plain-language introduction, a few key diagrams, and the best places to read the original books and watch A. Nagraj's talks.</p>
+    <a class="btn light" href="{{ '/madhyastha-darshan/' | relative_url }}">Explore the philosophy {% include icon.html n='arrow' %}</a>
+  </div>
+  <div class="pic"><img src="{{ '/assets/img/madhyasth/cosmos-mind.webp' | relative_url }}" alt="Silhouette of a human head filled with a spiral galaxy" loading="lazy"></div>
+</section>
 
-  {% if site.email %}
-  <section class="sec" style="padding-top:12px">
-    <div class="hello">
-      <div><h2>Say hello</h2><p>A question, a thought, or a disagreement? I read every message.</p></div>
-      <div class="btns">
-        <a class="btn primary" href="mailto:{{ site.email }}">{% include icon.html n='mail' %} Email me</a>
-        <a class="btn" href="{{ '/feed.xml' | relative_url }}">{% include icon.html n='rss' %} Follow via RSS</a>
-      </div>
+{% if site.email %}
+<section class="sec alt">
+  <div class="wrap hello">
+    <div><h2>Say hello</h2><p>A question, a thought, or a disagreement? I read every message.</p></div>
+    <div class="btns">
+      <a class="btn primary" href="mailto:{{ site.email }}">{% include icon.html n='mail' %} Email me</a>
+      <a class="btn" href="{{ '/feed.xml' | relative_url }}">{% include icon.html n='rss' %} Follow via RSS</a>
     </div>
-  </section>
-  {% endif %}
-</div>
+  </div>
+</section>
+{% endif %}

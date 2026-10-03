@@ -5,31 +5,30 @@ permalink: /madhyastha-darshan/
 description: A plain-language introduction to Madhyastha Darshan (Coexistential Philosophy) by A. Nagraj, with key diagrams and links to read, watch and study.
 image: /assets/img/madhyasth/cosmos-mind.webp
 ---
-<div class="wrap">
 
-<section class="md-hero">
-  <div>
+<section class="mdhero">
+  <div class="txt">
     <p class="eyebrow">The philosophy</p>
     <h1>Existence is coexistence.</h1>
-    <p class="lede">Madhyastha Darshan is a philosophy of living in harmony with oneself, family, society and nature, presented by A. Nagraj (1920–2016).</p>
+    <p>Madhyastha Darshan is a philosophy of living in harmony with oneself, family, society and nature, presented by A. Nagraj (1920–2016).</p>
     <div class="btns">
-      <a class="btn primary" href="https://app.madhyasth.org/read">{% include icon.html n='arrow' %} Read the books</a>
-      <a class="btn" href="https://www.madhyasth.org/">Official website</a>
+      <a class="btn light" href="https://app.madhyasth.org/read">Read the books {% include icon.html n='arrow' %}</a>
+      <a class="btn light" href="https://www.madhyasth.org/">Official website {% include icon.html n='arrow' %}</a>
     </div>
   </div>
-  <img src="{{ '/assets/img/madhyasth/cosmos-mind.webp' | relative_url }}" alt="Silhouette of a human head filled with a spiral galaxy">
+  <div class="pic"><img src="{{ '/assets/img/madhyasth/cosmos-mind.webp' | relative_url }}" alt="Silhouette of a human head filled with a spiral galaxy"></div>
 </section>
 
-<section class="sec" style="padding-top:8px">
+<section class="sec"><div class="wrap">
   <div class="sec-head"><h2>In one minute</h2></div>
   <div class="three">
-    <div class="point"><b>The idea</b><p>Material nature, conscious nature and space are in a constant relationship of <em>coexistence</em>. A human being is a conscious self (<em>jeevan</em>) together with a body.</p></div>
+    <div class="point"><b>The idea</b><p>Material nature, conscious nature and space are in a constant relationship of coexistence. A human being is a conscious self (<em>jeevan</em>) together with a body.</p></div>
     <div class="point"><b>The problem</b><p>Personal strife, family conflict, social discord and ecological damage all grow from an incomplete understanding of who we are and how we relate to the world.</p></div>
     <div class="point"><b>The solution</b><p>Understanding, not belief. The philosophy asks to be studied and verified by reason and by living experience, one step at a time.</p></div>
   </div>
-</section>
+</div></section>
 
-<section class="sec" style="padding-top:8px">
+<section class="sec alt"><div class="wrap">
   <div class="sec-head"><h2>See it at a glance</h2></div>
   <div class="diagrams">
     <figure class="dia">
@@ -60,9 +59,9 @@ image: /assets/img/madhyasth/cosmos-mind.webp
       <figcaption><b>Four problems, one solution</b>Diagram: madhyasth.org</figcaption>
     </figure>
   </div>
-</section>
+</div></section>
 
-<section class="sec" style="padding-top:8px">
+<section class="sec"><div class="wrap">
   <div class="sec-head"><h2>Read, watch, attend</h2></div>
   <div class="links">
     <a class="link-card" href="https://app.madhyasth.org/read"><span class="label">Read</span><b>Madhyasth Darshan Study App</b><span>The books, readable online.</span><em>Open the app →</em></a>
@@ -70,19 +69,19 @@ image: /assets/img/madhyasth/cosmos-mind.webp
     <a class="link-card" href="https://www.madhyasth.org/"><span class="label">Website</span><b>madhyasth.org</b><span>The official site: philosophy, books and community.</span><em>Visit the site →</em></a>
     <a class="link-card" href="https://www.madhyasth.org/jeevan-vidya-shivir-workshop"><span class="label">Attend</span><b>Jeevan Vidya workshop</b><span>The introductory workshop, with schedule and registration.</span><em>See the workshop →</em></a>
   </div>
-</section>
+</div></section>
 
 {% assign mdposts = site.posts | where_exp: "p", "p.categories contains 'Madhyastha Darshan'" %}
-<section class="sec" style="padding-top:8px">
+<section class="sec alt"><div class="wrap">
   <div class="sec-head"><h2>My writing on Madhyastha Darshan</h2>{% if mdposts.size > 0 %}<a href="{{ '/writing/' | relative_url }}#madhyastha-darshan">See all →</a>{% endif %}</div>
   {% if mdposts.size > 0 %}
   <div class="grid">{% for post in mdposts %}{% include post-card.html post=post %}{% endfor %}</div>
   {% else %}
-  <p style="color:var(--muted);max-width:40em">Essays applying Madhyastha Darshan to daily life will appear here. Tag a post with <code>categories: [Madhyastha Darshan]</code> and it shows up automatically.</p>
+  <p style="color:var(--muted);font-size:1.15rem;max-width:44em;margin:0">Essays applying Madhyastha Darshan to daily life will appear here. Tag a post with <code>categories: [Madhyastha Darshan]</code> and it shows up automatically.</p>
   {% endif %}
-</section>
+</div></section>
 
-<section class="sec" style="padding-top:8px">
+<section class="sec"><div class="wrap">
   <div class="sec-head"><h2>Go a little deeper</h2></div>
   <details class="fold"><summary>The literature: 12 books</summary><div class="inner">
     <p>The philosophy is set out in 12 books, written originally in Hindi. Four are the core <em>darshans</em>:</p>
@@ -98,6 +97,4 @@ image: /assets/img/madhyasth/cosmos-mind.webp
     </div>
   </div></details>
   <p class="credit">Summarised in my own words from <a href="https://www.madhyasth.org/">madhyasth.org</a>. Diagrams and photograph belong to their original publishers and are shown with credit. Please refer to the official site for authoritative material. Essays on this blog are my personal understanding.</p>
-</section>
-
-</div>
+</div></section>

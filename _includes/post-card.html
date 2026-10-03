@@ -1,6 +1,6 @@
 {%- assign p = include.post -%}
 {%- assign v = include.variant | default: "" -%}
-<article class="card {{ v }}" data-cat="{{ p.categories | join: '|' | slugify }}" data-tags="{{ p.tags | join: '|' | downcase }}" data-text="{{ p.title | downcase | escape }} {{ p.content | strip_html | replace: '"', ' ' | truncate: 600 | downcase | escape }}">
+<article class="card {{ v }}" data-date="{{ p.date | date: '%s' }}" data-cat="{{ p.categories | join: '|' | slugify }}" data-tags="{{ p.tags | join: '|' | downcase }}" data-text="{{ p.title | downcase | escape }} {{ p.content | strip_html | replace: '"', ' ' | truncate: 600 | downcase | escape }}">
   <a class="cover{% if p.cover_fit == 'contain' %} contain{% endif %}{% unless p.cover %} ph{% endunless %}" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
     {%- if p.cover -%}<img src="{{ p.cover | relative_url }}" alt="" loading="lazy">{%- else -%}{{ p.title | slice: 0 }}{%- endif -%}
   </a>

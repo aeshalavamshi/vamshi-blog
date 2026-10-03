@@ -13,6 +13,7 @@ layout: default
   {% if page.cover %}<div class="post-cover"><div class="cover{% if page.cover_fit == 'contain' %} contain{% endif %}"><img src="{{ page.cover | relative_url }}" alt=""></div></div>{% endif %}
 
   <div class="article-grid">
+    <aside class="col-l" aria-label="Contents"><div id="toc" hidden><h4 class="side-h">In this essay</h4></div></aside>
     <article>
       <div class="prose">{{ content }}</div>
       {% if page.source %}<p class="note">First published on <a href="{{ page.original_url }}">{{ page.source }}</a>, preserved here.</p>{% endif %}
@@ -21,25 +22,20 @@ layout: default
         {% if page.next.url %}<a class="next" href="{{ page.next.url | relative_url }}"><small>Newer</small>{{ page.next.title }}</a>{% endif %}
       </nav>
     </article>
-    <aside class="side" aria-label="Article tools">
-      <div id="toc" hidden><h4>In this essay</h4></div>
+    <aside class="col-r" aria-label="Share and tags">
       <div>
-        <h4>Share</h4>
+        <h4 class="side-h">Share</h4>
         <div class="share">
-          <a class="btn sm" href="https://wa.me/?text={{ enc_title }}%20{{ enc_url }}" target="_blank" rel="noopener">{% include icon.html n='whatsapp' %} WhatsApp</a>
-          <a class="btn sm" href="https://twitter.com/intent/tweet?text={{ enc_title }}&url={{ enc_url }}" target="_blank" rel="noopener">{% include icon.html n='x' %} Post</a>
-          <a class="btn sm" href="https://www.linkedin.com/sharing/share-offsite/?url={{ enc_url }}" target="_blank" rel="noopener">{% include icon.html n='linkedin' %} LinkedIn</a>
+          <a class="btn sm" href="https://wa.me/?text={{ enc_title }}%20{{ enc_url }}">{% include icon.html n='whatsapp' %} WhatsApp</a>
+          <a class="btn sm" href="https://twitter.com/intent/tweet?text={{ enc_title }}&url={{ enc_url }}">{% include icon.html n='x' %} Post on X</a>
+          <a class="btn sm" href="https://www.linkedin.com/sharing/share-offsite/?url={{ enc_url }}">{% include icon.html n='linkedin' %} LinkedIn</a>
           <a class="btn sm" href="mailto:?subject={{ enc_title }}&body={{ enc_url }}">{% include icon.html n='mail' %} Email</a>
           <button class="btn sm" data-copy="{{ abs }}">{% include icon.html n='link' %} Copy link</button>
           <button class="btn sm" data-share hidden>{% include icon.html n='share' %} Share…</button>
         </div>
       </div>
-      {% if page.tags.size > 0 %}<div><h4>Tags</h4><div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div></div>{% endif %}
-      <div class="author">
-        <b>{{ site.author }}</b>
-        <p>Writing on Madhyastha Darshan and living well. Questions or thoughts on this essay?</p>
-        {% if site.email %}<a class="btn primary sm" href="mailto:{{ site.email }}?subject=Re: {{ page.title | url_encode }}">{% include icon.html n='mail' %} Write to me</a>{% endif %}
-      </div>
+      {% if page.tags.size > 0 %}<div><h4 class="side-h">Tags</h4><div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div></div>{% endif %}
+      {% if site.email %}<div class="author"><h4 class="side-h">Reply</h4><p>Thoughts on this essay?</p><a class="btn primary sm" href="mailto:{{ site.email }}?subject=Re: {{ page.title | url_encode }}">{% include icon.html n='mail' %} Write to me</a></div>{% endif %}
     </aside>
   </div>
 </div>

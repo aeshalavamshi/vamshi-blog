@@ -7,29 +7,40 @@ description: All essays, organised by topic and tag, with search.
 <div class="wrap">
   <header class="page-head">
     <h1>Writing</h1>
-    <p class="lede">Every essay in one place. Filter by topic or tag, or search.</p>
+    <p class="lede">Every essay in one place. Pick a topic, search, or use Filters for tags and order.</p>
   </header>
-  <div class="tools">
+  <div class="bar2">
     <div class="search">{% include icon.html n='search' %}<label class="sr" for="q">Search essays</label><input id="q" type="search" placeholder="Search essays…" autocomplete="off"></div>
-    <div>
-      <p class="row-label">Topics</p>
-      <div class="chips">
-        <button class="chip" data-topic="all" aria-pressed="true">All <small>{{ site.posts.size }}</small></button>
-        {% assign cats = site.categories | sort %}
-        {% for c in cats %}<button class="chip" data-topic="{{ c[0] | slugify }}" aria-pressed="false">{{ c[0] }} <small>{{ c[1].size }}</small></button>{% endfor %}
-      </div>
+    <div class="chips">
+      <button class="chip" data-topic="all" aria-pressed="true">All <small>{{ site.posts.size }}</small></button>
+      {% assign cats = site.categories | sort %}
+      {% for c in cats %}<button class="chip" data-topic="{{ c[0] | slugify }}" aria-pressed="false">{{ c[0] }} <small>{{ c[1].size }}</small></button>{% endfor %}
     </div>
-    <details class="more">
-      <summary>Filter by tag ▾</summary>
-      <div class="chips">
-        {% assign tags = site.tags | sort %}
-        {% for t in tags %}<button class="chip" data-tag="{{ t[0] | downcase }}" aria-pressed="false">{{ t[0] }} <small>{{ t[1].size }}</small></button>{% endfor %}
-      </div>
-    </details>
+    <button class="btn sm" data-modal-open>Filters <span id="fcount"></span></button>
   </div>
   <p id="count" aria-live="polite"></p>
-  <div class="grid" id="posts">
+  <div class="grid" id="posts" style="padding-bottom:64px">
     {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
   </div>
   <p class="empty" id="empty" hidden>No essays match. Try clearing the search or choosing "All".</p>
+</div>
+
+<div class="modal" id="fmodal" aria-hidden="true" role="dialog" aria-label="Filters">
+  <div class="modal-box">
+    <h2>Filters <button class="icon-btn" data-modal-close aria-label="Close filters">✕</button></h2>
+    <h3>Tags</h3>
+    <div class="chips">
+      {% assign tags = site.tags | sort %}
+      {% for t in tags %}<button class="chip" data-tag="{{ t[0] | downcase }}" aria-pressed="false">{{ t[0] }} <small>{{ t[1].size }}</small></button>{% endfor %}
+    </div>
+    <h3>Order</h3>
+    <div class="chips">
+      <button class="chip" data-sort="new" aria-pressed="true">Newest first</button>
+      <button class="chip" data-sort="old" aria-pressed="false">Oldest first</button>
+    </div>
+    <div class="actions">
+      <button class="btn primary" data-update>Update results</button>
+      <button class="btn" data-reset>Reset</button>
+    </div>
+  </div>
 </div>

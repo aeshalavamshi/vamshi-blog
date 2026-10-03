@@ -36,8 +36,8 @@ My intention with this blog is to observe, and bring to the fore, the circles an
 Everything here is personal reflection, written in a private capacity. It does not represent the views of any organisation or office I am associated with.
 
     </div>
-    <aside class="side">
-      <div class="author">
+    <aside>
+      <div class="box">
         <b>Get in touch</b>
         <p>Questions, ideas or disagreements are welcome.</p>
         {% if site.email %}<p><a class="btn primary sm" href="mailto:{{ site.email }}">{% include icon.html n='mail' %} Email me</a></p>{% endif %}
@@ -46,7 +46,7 @@ Everything here is personal reflection, written in a private capacity. It does n
           <a class="btn sm" href="{{ '/feed.xml' | relative_url }}">{% include icon.html n='rss' %} RSS</a>
         </p>
       </div>
-      <div class="author">
+      <div class="box">
         <b>Earlier writing</b>
         <p>My first blog, Facts.and.opinions, is still online.</p>
         <a class="btn sm" href="https://circlesnlines.wordpress.com/">Visit old blog</a>
