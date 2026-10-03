@@ -26,7 +26,7 @@ image: /assets/img/madhyasth/cosmos-mind.webp
     <li><b>What it is</b>A new "darshan" (way of seeing reality), arrived at through the meditative method of <em>sadhana–samadhi–sanyama</em>, not drawn from earlier texts or beliefs.</li>
     <li><b>What it claims</b>That the material, the conscious and space are in a fundamental relationship of <em>coexistence</em>, and that humans can understand this and live by it.</li>
     <li><b>What it offers</b>A way to resolve personal, family, social and ecological problems, put forward as an alternative to both materialism and mysticism-centred spiritualism.</li>
-    <li><b>How it's meant to be tested</b>It asks to be studied and verified by reason and by living experience at each step, not accepted on faith.</li>
+    <li><b>How to test it</b>It asks to be studied and verified by reason and by living experience at each step, not accepted on faith.</li>
   </ul>
 </div>
 
