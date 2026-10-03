@@ -333,3 +333,11 @@ main{padding-top:calc(var(--hh) + 2px)}
   .box{padding:20px}
   #top{right:14px;bottom:16px}
 }
+
+/* keep hero/band text inside narrow screens */
+@media (max-width:860px){
+  .mdhero,.mdband{grid-template-columns:minmax(0,1fr)}
+  .mdhero .txt,.mdband .txt{min-width:0;align-items:stretch}
+  .mdhero .btns,.mdband .btns,.statement .btns{max-width:100%}
+  .mdhero h1,.mdband h2{overflow-wrap:anywhere}
+}
