@@ -160,11 +160,11 @@ Also modern research is finding similar results: This will be covered in a later
 Your neighbor is probably not intending to disturb you, by playing loud music. Your car mechanic is probably not trying to loot you. Your examiner is probably not giving tough questions only this year. The colleague with whom you had a fight, probably doesn’t have any ego issues. People from other religion are probably not trying to harm your political interests. The government officer who is delaying your work in your locality, is probably not waiting for a bribe. **Concepts of religion and nationhood are not really ‘real’.** These are notions we construct day-in and day-out from childhood and make them part of our lives. They are a part of our identity. Some inhuman activities also happen on the basis of these notions, as we don’t see them in the right form.
 
 **We SEE a corrupted form of reality** :  We do believe in various similar things. We are by nature; living in our own constructs and  obsessing about ourselves. Just close your eyes and please sit calmly for 5 mins. You would know this statement is true. I feel our mind chatter, is programmed to keep rolling ‘us’ in ‘past’ and ‘future’. We do have thoughts of how pleasant the atmosphere is, how good the scent of the room etc., when we sit for 5mins, but slowly thoughts with the words ‘***I’, ‘you’  ‘m***y’ and your ‘***constructs’*** start coming. Slowly ***the train of thought*** starts, where the alternative realities, imagined realities are created. For ex: “*If I were* my *boss I would treat my employees like this  that”* start coming.  
-*****And when your imagined reality doesn’t match with the present reality, you feel dissatisfied.***** ****When your constructs are falsified you get stressed.****
+***And when your imagined reality doesn’t match with the present reality, you feel dissatisfied.*** **When your constructs are falsified you get stressed.**
 
 **World revolves around ‘I’**: And this ‘world’, this world which ‘revolves’ around us, we are bound to get anxious, worried. Do you get anxious if one of your neighbour had a fight with another neighbour? May be some. But when the fight is with you, your anxiety level definitely increases. Similarly when we see, as our mind guides us to believe, the whole world ‘revolving’ around us, we get more anxious and stressed out.
 
-> Your imagined reality doesn’t match with the outside reality and you feel dissatisfied. When ****your constructs are falsified you get stressed****.
+> Your imagined reality doesn’t match with the outside reality and you feel dissatisfied. When **your constructs are falsified you get stressed**.
 
 ## Observation 3: **Vipassana: our personality changes:**
 
